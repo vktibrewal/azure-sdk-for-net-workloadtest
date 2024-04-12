@@ -16,24 +16,23 @@ namespace Microsoft.Azure.Management.RecoveryServices.Backup.Models
     using System.Linq;
 
     /// <summary>
-    /// Azure VM workload-specific protected item representing SAP ASE
-    /// Database.
+    /// Azure VM workload-specific protected item representing SQL Instance.
     /// </summary>
-    [Newtonsoft.Json.JsonObject("AzureVmWorkloadSAPAseDatabase")]
-    public partial class AzureVmWorkloadSAPAseDatabaseProtectedItem : AzureVmWorkloadProtectedItem
+    [Newtonsoft.Json.JsonObject("AzureVmWorkloadSQLInstance")]
+    public partial class AzureVmWorkloadSQLInstanceProtectedItem : AzureVmWorkloadProtectedItem
     {
         /// <summary>
         /// Initializes a new instance of the
-        /// AzureVmWorkloadSAPAseDatabaseProtectedItem class.
+        /// AzureVmWorkloadSQLInstanceProtectedItem class.
         /// </summary>
-        public AzureVmWorkloadSAPAseDatabaseProtectedItem()
+        public AzureVmWorkloadSQLInstanceProtectedItem()
         {
             CustomInit();
         }
 
         /// <summary>
         /// Initializes a new instance of the
-        /// AzureVmWorkloadSAPAseDatabaseProtectedItem class.
+        /// AzureVmWorkloadSQLInstanceProtectedItem class.
         /// </summary>
         /// <param name="backupManagementType">Type of backup management for
         /// the backed up item. Possible values include: 'Invalid',
@@ -110,9 +109,16 @@ namespace Microsoft.Azure.Management.RecoveryServices.Backup.Models
         /// <param name="kpisHealths">Health details of different KPIs</param>
         /// <param name="nodesList">List of the nodes in case of distributed
         /// container.</param>
-        public AzureVmWorkloadSAPAseDatabaseProtectedItem(string backupManagementType = default(string), string workloadType = default(string), string containerName = default(string), string sourceResourceId = default(string), string policyId = default(string), System.DateTime? lastRecoveryPoint = default(System.DateTime?), string backupSetName = default(string), string createMode = default(string), System.DateTime? deferredDeleteTimeInUTC = default(System.DateTime?), bool? isScheduledForDeferredDelete = default(bool?), string deferredDeleteTimeRemaining = default(string), bool? isDeferredDeleteScheduleUpcoming = default(bool?), bool? isRehydrate = default(bool?), IList<string> resourceGuardOperationRequests = default(IList<string>), bool? isArchiveEnabled = default(bool?), string policyName = default(string), int? softDeleteRetentionPeriodInDays = default(int?), string vaultId = default(string), string friendlyName = default(string), string serverName = default(string), string parentName = default(string), string parentType = default(string), string protectionStatus = default(string), string protectionState = default(string), string lastBackupStatus = default(string), System.DateTime? lastBackupTime = default(System.DateTime?), ErrorDetail lastBackupErrorDetail = default(ErrorDetail), string protectedItemDataSourceId = default(string), string protectedItemHealthStatus = default(string), AzureVmWorkloadProtectedItemExtendedInfo extendedInfo = default(AzureVmWorkloadProtectedItemExtendedInfo), IDictionary<string, KPIResourceHealthDetails> kpisHealths = default(IDictionary<string, KPIResourceHealthDetails>), IList<DistributedNodesInfo> nodesList = default(IList<DistributedNodesInfo>))
+        /// <param name="childDatabaseNameList">Name of Child Dbs protected
+        /// under this parent.</param>
+        /// <param name="instanceProtectionReadiness">The state of instance
+        /// protection. Possible values include: 'Unknown', 'Ready',
+        /// 'ScheduleDisabled', 'PartialProtection', 'ProtectionError'</param>
+        public AzureVmWorkloadSQLInstanceProtectedItem(string backupManagementType = default(string), string workloadType = default(string), string containerName = default(string), string sourceResourceId = default(string), string policyId = default(string), System.DateTime? lastRecoveryPoint = default(System.DateTime?), string backupSetName = default(string), string createMode = default(string), System.DateTime? deferredDeleteTimeInUTC = default(System.DateTime?), bool? isScheduledForDeferredDelete = default(bool?), string deferredDeleteTimeRemaining = default(string), bool? isDeferredDeleteScheduleUpcoming = default(bool?), bool? isRehydrate = default(bool?), IList<string> resourceGuardOperationRequests = default(IList<string>), bool? isArchiveEnabled = default(bool?), string policyName = default(string), int? softDeleteRetentionPeriodInDays = default(int?), string vaultId = default(string), string friendlyName = default(string), string serverName = default(string), string parentName = default(string), string parentType = default(string), string protectionStatus = default(string), string protectionState = default(string), string lastBackupStatus = default(string), System.DateTime? lastBackupTime = default(System.DateTime?), ErrorDetail lastBackupErrorDetail = default(ErrorDetail), string protectedItemDataSourceId = default(string), string protectedItemHealthStatus = default(string), AzureVmWorkloadProtectedItemExtendedInfo extendedInfo = default(AzureVmWorkloadProtectedItemExtendedInfo), IDictionary<string, KPIResourceHealthDetails> kpisHealths = default(IDictionary<string, KPIResourceHealthDetails>), IList<DistributedNodesInfo> nodesList = default(IList<DistributedNodesInfo>), IList<string> childDatabaseNameList = default(IList<string>), string instanceProtectionReadiness = default(string))
             : base(backupManagementType, workloadType, containerName, sourceResourceId, policyId, lastRecoveryPoint, backupSetName, createMode, deferredDeleteTimeInUTC, isScheduledForDeferredDelete, deferredDeleteTimeRemaining, isDeferredDeleteScheduleUpcoming, isRehydrate, resourceGuardOperationRequests, isArchiveEnabled, policyName, softDeleteRetentionPeriodInDays, vaultId, friendlyName, serverName, parentName, parentType, protectionStatus, protectionState, lastBackupStatus, lastBackupTime, lastBackupErrorDetail, protectedItemDataSourceId, protectedItemHealthStatus, extendedInfo, kpisHealths, nodesList)
         {
+            ChildDatabaseNameList = childDatabaseNameList;
+            InstanceProtectionReadiness = instanceProtectionReadiness;
             CustomInit();
         }
 
@@ -120,6 +126,20 @@ namespace Microsoft.Azure.Management.RecoveryServices.Backup.Models
         /// An initialization method that performs custom operations like setting defaults
         /// </summary>
         partial void CustomInit();
+
+        /// <summary>
+        /// Gets or sets name of Child Dbs protected under this parent.
+        /// </summary>
+        [JsonProperty(PropertyName = "childDatabaseNameList")]
+        public IList<string> ChildDatabaseNameList { get; set; }
+
+        /// <summary>
+        /// Gets or sets the state of instance protection. Possible values
+        /// include: 'Unknown', 'Ready', 'ScheduleDisabled',
+        /// 'PartialProtection', 'ProtectionError'
+        /// </summary>
+        [JsonProperty(PropertyName = "instanceProtectionReadiness")]
+        public string InstanceProtectionReadiness { get; set; }
 
     }
 }

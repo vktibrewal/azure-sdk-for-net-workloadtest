@@ -43,7 +43,7 @@ namespace Microsoft.Azure.Management.RecoveryServices.Backup.Models
         /// 'AzureSqlDb', 'SQLDB', 'Exchange', 'Sharepoint', 'VMwareVM',
         /// 'SystemState', 'Client', 'GenericDataSource', 'SQLDataBase',
         /// 'AzureFileShare', 'SAPHanaDatabase', 'SAPAseDatabase',
-        /// 'SAPHanaDBInstance'</param>
+        /// 'SAPHanaDBInstance', 'SQLInstance'</param>
         /// <param name="containerName">Unique name of container</param>
         /// <param name="sourceResourceId">ARM ID of the resource to be backed
         /// up.</param>

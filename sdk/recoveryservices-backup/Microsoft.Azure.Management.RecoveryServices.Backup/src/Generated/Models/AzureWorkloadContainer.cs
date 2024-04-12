@@ -53,7 +53,7 @@ namespace Microsoft.Azure.Management.RecoveryServices.Backup.Models
         /// 'AzureSqlDb', 'SQLDB', 'Exchange', 'Sharepoint', 'VMwareVM',
         /// 'SystemState', 'Client', 'GenericDataSource', 'SQLDataBase',
         /// 'AzureFileShare', 'SAPHanaDatabase', 'SAPAseDatabase',
-        /// 'SAPHanaDBInstance'</param>
+        /// 'SAPHanaDBInstance', 'SQLInstance'</param>
         /// <param name="operationType">Re-Do Operation. Possible values
         /// include: 'Invalid', 'Register', 'Reregister'</param>
         public AzureWorkloadContainer(string friendlyName = default(string), string backupManagementType = default(string), string registrationStatus = default(string), string healthStatus = default(string), string protectableObjectType = default(string), string sourceResourceId = default(string), System.DateTime? lastUpdatedTime = default(System.DateTime?), AzureWorkloadContainerExtendedInfo extendedInfo = default(AzureWorkloadContainerExtendedInfo), string workloadType = default(string), string operationType = default(string))
@@ -97,7 +97,7 @@ namespace Microsoft.Azure.Management.RecoveryServices.Backup.Models
         /// 'AzureSqlDb', 'SQLDB', 'Exchange', 'Sharepoint', 'VMwareVM',
         /// 'SystemState', 'Client', 'GenericDataSource', 'SQLDataBase',
         /// 'AzureFileShare', 'SAPHanaDatabase', 'SAPAseDatabase',
-        /// 'SAPHanaDBInstance'
+        /// 'SAPHanaDBInstance', 'SQLInstance'
         /// </summary>
         [JsonProperty(PropertyName = "workloadType")]
         public string WorkloadType { get; set; }

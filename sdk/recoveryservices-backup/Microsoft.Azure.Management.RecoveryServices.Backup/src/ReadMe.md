@@ -24,7 +24,7 @@ payload-flattening-threshold: 2
 
 ###
 ``` yaml
-commit: 85917df97ae700d18aab11a39b070a6e34919f89
+commit: ca7fc5ab280139277a44e18af2dc845cfe9cbc4b
 input-file:
   - https://github.com/vktibrewal/azure-rest-api-specs-workloadtest/blob/$(commit)/specification/recoveryservicesbackup/resource-manager/Microsoft.RecoveryServices/stable/2023-06-01/bms.json
 

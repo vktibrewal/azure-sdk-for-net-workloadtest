@@ -43,7 +43,7 @@ namespace Microsoft.Azure.Management.RecoveryServices.Backup.Models
         /// 'AzureSqlDb', 'SQLDB', 'Exchange', 'Sharepoint', 'VMwareVM',
         /// 'SystemState', 'Client', 'GenericDataSource', 'SQLDataBase',
         /// 'AzureFileShare', 'SAPHanaDatabase', 'SAPAseDatabase',
-        /// 'SAPHanaDBInstance'</param>
+        /// 'SAPHanaDBInstance', 'SQLInstance'</param>
         /// <param name="settings">Common settings for the backup
         /// management</param>
         /// <param name="subProtectionPolicy">List of sub-protection policies
@@ -70,7 +70,8 @@ namespace Microsoft.Azure.Management.RecoveryServices.Backup.Models
         /// values include: 'Invalid', 'VM', 'FileFolder', 'AzureSqlDb',
         /// 'SQLDB', 'Exchange', 'Sharepoint', 'VMwareVM', 'SystemState',
         /// 'Client', 'GenericDataSource', 'SQLDataBase', 'AzureFileShare',
-        /// 'SAPHanaDatabase', 'SAPAseDatabase', 'SAPHanaDBInstance'
+        /// 'SAPHanaDatabase', 'SAPAseDatabase', 'SAPHanaDBInstance',
+        /// 'SQLInstance'
         /// </summary>
         [JsonProperty(PropertyName = "workLoadType")]
         public string WorkLoadType { get; set; }
